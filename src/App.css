@@ -1,22 +1,97 @@
 .App {
-  text-align: center;
+    text-align: center;
 }
 
 .App-logo {
-  height: 40vmin;
+    height: 40vmin;
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
 }
 
 .App-link {
-  color: #09d3ac;
+    color: #09d3ac;
+}
+
+.navBar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding-top: 16px;
+    padding-bottom: 10px;
+    box-shadow: 0px -1px 5px rgba(0, 0, 0, 0.6);
+}
+
+.navBar ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navBar ul li {
+    width: 33.33%;
+}
+
+.navBar ul li a {
+    display: block;
+}
+
+.navBar ul li a .nav-icon {
+    display: block;
+    width: 30px;
+    height: 30px;
+    margin: 0 auto;
+    background-repeat: no-repeat;
+    background-size: 328px 429px;
+}
+
+.navBar ul li:first-child a .nav-icon {
+    background-image: url('./image/nav2.jpg');
+    background-position: -58px -88px;
+}
+
+.navBar ul li:first-child a.active .nav-icon {
+    background-image: url('./image/nav2.jpg');
+    background-position: -58px -88px;
+}
+
+.navBar ul li:first-child+li a .nav-icon {
+    background-image: url('./image/nav2.jpg');
+    background-position: -180px -88px;
+}
+
+.navBar ul li:first-child+li a.active .nav-icon {
+    background-image: url('./image/nav2.jpg');
+    background-position: -180px -88px;
+}
+
+.navBar ul li:first-child+li+li a .nav-icon {
+    background-image: url('./image/nav2.jpg');
+    background-position: -119px -283px;
+}
+
+.navBar ul li:first-child+li+li a.active .nav-icon {
+    background-image: url('./image/nav2.jpg');
+    background-position: -119px -283px;
+}
+
+.navBar ul li a .nav-font {
+    font-size: 14px;
+    line-height: 18px;
+    text-align: center;
+    color: #282c34;
+    margin-top: 4px;
+}
+
+.navBar ul li a.active .nav-font {
+    color: #FF6800;
 }
