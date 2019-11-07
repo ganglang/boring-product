@@ -1,16 +1,21 @@
-import React,{Component} from 'react';
-
-class Home extends Component{
-    constructor(props){
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { getNewss } from '../action/home'
+class Home extends Component {
+    constructor(props) {
         super(props);
     }
 
-    render(){
+    componentDidMount() {
+        this.props.getNewss();
+    }
+
+    render() {
         return (
-            <div>
-                home
+            <div >
+            home
             </div>
         )
     }
 }
-export default Home;
+export default connect(state => ({ news: state.home.news }), { getNewss })(Home);
