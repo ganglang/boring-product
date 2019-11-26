@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { getNewss } from '../action/home'
+import { getNewss } from '../../action/home';
+import NavBar from '../../components/navBar/navBar';
 class Home extends Component {
     constructor(props) {
         super(props);
@@ -14,6 +15,7 @@ class Home extends Component {
         return (
             <div >
             home
+            <NavBar/>  
             </div>
         )
     }

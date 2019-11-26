@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-
+import NavBar from '../../components/navBar/navBar';
 class Personal extends Component {
     constructor(props) {
         super(props)
@@ -7,8 +7,9 @@ class Personal extends Component {
 
     render() {
         return ( 
-            <div>
-                personal 
+            <div >
+            personal 
+            <NavBar/>
             </div>
         )
     }

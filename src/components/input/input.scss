@@ -1,0 +1,36 @@
+@import '../../common.scss';
+.input-group {
+    display: flex;
+    justify-content: flex-start;
+    align-content: center;
+    padding: px(10);
+    border-bottom: px(1) solid #dddddd;
+    .label {
+        width: 35%;
+        height: px(24);
+        font-size: px(16);
+        line-height: px(24);
+        color: #666666;
+        text-align: right;
+        padding-right: px(16);
+    }
+    input {
+        width: 65%;
+        height: px(24);
+        border: none;
+        outline: none;
+        font-size: px(16);
+        line-height: px(24);
+        color: #666666;
+        padding: px(0) px(4);
+        margin: 0;
+        &::placeholder {
+            border: none;
+            outline: none;
+            font-size: px(16);
+            line-height: px(24);
+            color: #cccccc;
+            padding: px(0) px(4);
+        }
+    }
+}

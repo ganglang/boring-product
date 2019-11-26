@@ -1,0 +1,5 @@
+$baseFont:3.75;
+$color:#00b8ff;
+@function px($px) {
+    @return ($px/$baseFont) * 1vw;
+}

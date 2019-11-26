@@ -1,0 +1,14 @@
+@import '../../common.scss';
+.btn-box {
+    padding: px(20) px(16);
+    .btn {
+        width: 100%;
+        height: px(42);
+        font-size: px(16);
+        line-height: px(42);
+        color: #ffffff;
+        background: $color;
+        text-align: center;
+        border-radius: px(24);
+    }
+}
