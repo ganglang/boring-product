@@ -1,3 +1,4 @@
 import { combineReducers } from 'redux';
-import { homeRedcer } from './home'
-export default combineReducers({ home: homeRedcer });
+import { homeReducer } from './home';
+import { loginReducer } from './login';
+export default combineReducers({ home: homeReducer, login: loginReducer });

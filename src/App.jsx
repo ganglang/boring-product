@@ -4,6 +4,7 @@ import Home from './pages/home/home';
 import Personal from './pages/personal/personal';
 import Classify from './pages/classify/classify';
 import Login from './pages/login/login';
+import AuthorizedRoute from './components/authorizedRoute/authorizedRoute';
 import './App.css';
 
 function App() {
@@ -12,7 +13,7 @@ function App() {
       <Router>
         <Switch>
             <Route path="/home" component={Home}></Route>
-            <Route path="/personal" component={Personal}></Route>
+            <AuthorizedRoute path="/personal" component={Personal}></AuthorizedRoute>
             <Route path="/classify" component={Classify}></Route>
             <Route path="/login" component={Login}></Route>
             <Redirect from='*' to='/home'  />

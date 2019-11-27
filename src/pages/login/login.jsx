@@ -1,6 +1,9 @@
 import React,{Component} from 'react';
 import Input from '../../components/input/input';
-import Button from '../../components/button/button';
+import MyButton from '../../components/button/button';
+import {loginIn} from '../../action/login';
+import {connect} from 'react-redux';
+import './login.scss';
 class Login extends Component{
     constructor(props){
         super(props);
@@ -8,7 +11,8 @@ class Login extends Component{
 
     render(){
         return (
-            <div>
+            <div className="login-page">
+                <div className="center">
                 <div className="input-box">
                     <Input>
                         <div className="label">用户名</div>
@@ -19,10 +23,11 @@ class Login extends Component{
                         <input type="password" placeholder="请填写密码"/>
                     </Input>
                 </div>
-                <Button>登录</Button>
+                <MyButton touch={this.props.loginIn.bind(this)}>登录</MyButton>
+                </div> 
             </div>
         )
     }
 }
 
-export default Login;
+export default connect(state=>state.login,{loginIn})(Login);

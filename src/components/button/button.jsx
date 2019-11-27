@@ -8,7 +8,7 @@ class Button extends Component{
     render(){
         return (
         <div className="btn-box">
-            <div className="btn">
+            <div className="btn" onClick={this.props.touch}>
                 {this.props.children}
             </div>   
         </div>

@@ -1,0 +1,10 @@
+@import '../../common.scss';
+.login-page {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .input-box {
+        padding: px(0) px(16);
+    }
+}

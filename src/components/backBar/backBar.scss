@@ -1,0 +1,31 @@
+@import '../../common.scss';
+.back-bar {
+    font-size: px(16);
+    line-height: px(32);
+    color: $themeColor;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    border: px(1) solid #dddddd;
+    padding: px(10) px(10);
+    .anticon {
+        font-size: px(18);
+        line-height: px(32);
+    }
+    .icon {
+        display: block;
+        width: px(32);
+        height: px(32);
+        position: absolute;
+        left: px(10);
+        top: px(10);
+    }
+    .other {
+        display: block;
+        position: absolute;
+        right: px(10);
+        top: px(10);
+    }
+}

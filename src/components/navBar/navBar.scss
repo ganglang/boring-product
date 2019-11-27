@@ -4,15 +4,16 @@
     bottom: 0;
     left: 0;
     right: 0;
-    padding-top: 16px;
-    padding-bottom: 10px;
-    box-shadow: 0px -1px 10px rgba(0, 0, 0, 0.15);
+    padding-top: px(10);
+    padding-bottom: px(8);
+    box-shadow: px(0) px(-1) px(10) rgba(0, 0, 0, 0.15);
 }
 
 .navBar ul {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: px(0);
 }
 
 .navBar ul li {
@@ -25,49 +26,49 @@
 
 .navBar ul li a .nav-icon {
     display: block;
-    width: 30px;
-    height: 30px;
+    width: px(24);
+    height: px(24);
     margin: 0 auto;
     background-repeat: no-repeat;
-    background-size: 328px 429px;
+    background-size: px(328) px(429);
 }
 
 .navBar ul li:first-child a .nav-icon {
     background-image: url('../../image/nav2.jpg');
-    background-position: -58px -88px;
+    background-position: px(-58) px(-88);
 }
 
 .navBar ul li:first-child a.active .nav-icon {
     background-image: url('../../image/nav2.jpg');
-    background-position: -58px -88px;
+    background-position: px(-58) px(-88);
 }
 
 .navBar ul li:first-child+li a .nav-icon {
     background-image: url('../../image/nav2.jpg');
-    background-position: -180px -88px;
+    background-position: px(-180) px(-88);
 }
 
 .navBar ul li:first-child+li a.active .nav-icon {
     background-image: url('../../image/nav2.jpg');
-    background-position: -180px -88px;
+    background-position: px(-180) px(-88);
 }
 
 .navBar ul li:first-child+li+li a .nav-icon {
     background-image: url('../../image/nav2.jpg');
-    background-position: -119px -283px;
+    background-position: px(-119) px(-283);
 }
 
 .navBar ul li:first-child+li+li a.active .nav-icon {
     background-image: url('../../image/nav2.jpg');
-    background-position: -119px -283px;
+    background-position: px(-119) px(-283);
 }
 
 .navBar ul li a .nav-font {
-    font-size: 14px;
-    line-height: 18px;
+    font-size: px(14);
+    line-height: px(18);
     text-align: center;
     color: #282c34;
-    margin-top: 4px;
+    margin-top: px(4);
 }
 
 .navBar ul li a.active .nav-font {

@@ -11,7 +11,7 @@ class Addons extends Component{
         }
     }
 
-    toggleNav(){
+    toggleNav=()=>{
         this.setState({
             navStatus:!this.state.navStatus
         })
@@ -20,7 +20,7 @@ class Addons extends Component{
     render(){
         return (
             <div>
-                <div className="topBar" onClick="toggleNav()">切换</div>
+                <div className="topBar" onClick={this.toggleNav}>切换</div>
                 <ReactCSSTransitionGroup
                     transitionName="fadeLeft"
                     transitionEnterTimeout={500}
@@ -28,14 +28,16 @@ class Addons extends Component{
                 >
                     {
                         this.state.navStatus?(
-                        <div>
-                            <NavLink to="/home">首页</NavLink>
-                            <NavLink to="/classify">分类</NavLink>
-                            <NavLink to="/personal">个人中心</NavLink>
-                        </div>):null
+                        <ul>
+                            <li><NavLink to="/home">首页</NavLink></li>
+                            <li><NavLink to="/classify">分类</NavLink></li>
+                            <li><NavLink to="/personal">个人中心</NavLink></li>
+                        </ul>):null
                     }
                 </ReactCSSTransitionGroup>
             </div> 
         )
     }
 }
+
+export default Addons;

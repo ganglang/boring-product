@@ -34,6 +34,9 @@ module.exports = function(app) {
 ### 问题一:用 http-proxy-middleware 配置代理，请求地址却报404错误
 原因：在setupProxy.js少写了 pathRewrite 这个设置
 
+### 问题二: 使用antd框架，按需引入出错
+
+
 ### 前端面试题一：
 ```
 var name="world";

@@ -1,5 +1,26 @@
 $baseFont:3.75;
 $color:#00b8ff;
+$themeColor:#FF6800;
 @function px($px) {
     @return ($px/$baseFont) * 1vw;
+}
+
+html,
+body {
+    min-height: 100%;
+}
+
+#root,
+.App {
+    height: 100%;
+}
+
+ul,
+ol {
+    margin: 0;
+    padding: 0;
+}
+
+.page {
+    padding-top: px(42);
 }
