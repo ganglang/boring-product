@@ -14,7 +14,7 @@ function App() {
         <Switch>
             <Route path="/home" component={Home}></Route>
             <AuthorizedRoute path="/personal" component={Personal}></AuthorizedRoute>
-            <Route path="/classify" component={Classify}></Route>
+            <AuthorizedRoute path="/classify" component={Classify}></AuthorizedRoute>
             <Route path="/login" component={Login}></Route>
             <Redirect from='*' to='/home'  />
         </Switch>

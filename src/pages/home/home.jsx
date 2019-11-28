@@ -20,4 +20,4 @@ class Home extends Component {
         )
     }
 }
-export default connect(state => ({ news: state.home.news }), { getNewss })(Home);
+export default connect(state => ({ news: state.Home.news }), { getNewss })(Home);

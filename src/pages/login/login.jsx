@@ -9,7 +9,14 @@ class Login extends Component{
         super(props);
     }
 
+    backFrom= ()=>{
+        let fromPath = this.props.location.state.from.pathname; //获取from的路径
+        this.props.history.push(fromPath); //路由跳转   
+    }
+
     render(){
+        console.log("login");
+        console.log(this.props);
         return (
             <div className="login-page">
                 <div className="center">
@@ -23,11 +30,11 @@ class Login extends Component{
                         <input type="password" placeholder="请填写密码"/>
                     </Input>
                 </div>
-                <MyButton touch={this.props.loginIn.bind(this)}>登录</MyButton>
+                <MyButton touch={this.props.loginIn.bind(this,this.backFrom)}>登录</MyButton>
                 </div> 
             </div>
         )
     }
 }
 
-export default connect(state=>state.login,{loginIn})(Login);
+export default connect(state=>({Login:state.Login}),{loginIn})(Login);

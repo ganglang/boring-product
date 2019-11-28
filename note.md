@@ -36,6 +36,32 @@ module.exports = function(app) {
 
 ### 问题二: 使用antd框架，按需引入出错
 
+### react项目的路由拦截
+验证路由的代码：
+```
+import React,{Component} from 'react';
+import { connect } from 'react-redux';
+import {Redirect,Route} from 'react-router-dom';
+class AuthorizedRoute extends Component{
+
+    constructor(props){
+        super(props);
+    }
+
+    render(){
+        let Component=this.props.component;
+        console.log(this.props.login.login);
+        return (
+            <div>
+                {this.props.login.login?<Component />:<Redirect to="/login"/>}    
+            </div>
+        )
+    }
+}
+
+export default connect(state=>({login:state.login}),{})(AuthorizedRoute);
+```
+
 
 ### 前端面试题一：
 ```
@@ -75,3 +101,66 @@ alert(fn1());
 1.undefined和null出现的情况
 2.axios和fetch的区别
 3.优化页面的scroll事件
+
+### 知识点：路由拦截使用Route组件来写,详细见authorizedRoute.jsx文件
+```
+//此种写法正确
+            <Route render={ props=>{
+               return login?
+               <Component {...props}/>:
+               <Redirect to={{"pathname":"/login",state:{from:props.location}}}/>
+            }}>          
+            </Route>
+
+            //此种写法亦正确,但在Component组件里，返回上一页的this.props.history.goBack();无法使用
+            /*<div>
+                {login?
+                <Component {...this.props}/>:
+                <Redirect to={{"pathname":"/login",state:{from:this.props.location}}}/>}
+            </div>*/
+```
+下图为验证路由在已登录状态下没有重定向到login页面而是渲染Component，在Component页面里的this.props的比较图
+![Image text](./mdImage/不用Route来写路由拦截.png)
+![Image text](./mdImage/使用Route来写路由拦截.png)
+
+
+### 知识点：利用路由重定向Redirect跳转另一个页面，用props是无法将地址链接传到另一个页面的
+```
+<Redirect to={{pathname:'/login',state:{from:props.location}}}>
+```
+
+### 知识点：dispatch action 后需要做操作可以传回调函数过去createAction那里
+比如登录页面点击登录按钮要将登录信息更新到store里，之后就返回来的那个页面，详细代码看
+.login.jsx
+```
+backFrom= ()=>{
+        let fromPath = this.props.location.state.from.pathname; //获取from的路径
+        this.props.history.push(fromPath); //路由跳转   
+    }
+
+<MyButton touch={this.props.loginIn.bind(this,this.backFrom)}>登录</MyButton>
+export default connect(state=>state.login,{loginIn})(Login);    
+
+```
+action/login.js
+```
+export const loginIn = (callback) => {
+    return dispatch => {
+        setTimeout(() => {
+            window.localStorage.setItem("login", true);
+            dispatch({
+                type: actions.LOGIN_IN
+            });
+            message.info('登录成功', 2);
+            callback();
+        }, 500)
+    }
+}
+```
+
+### 知识点：asnyc await，用await修饰的函数的返回值要是个promise才行
+
+#### 知识点：路由的跳转
+```
+this.props.history.push(path);
+```

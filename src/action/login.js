@@ -2,14 +2,17 @@ import * as actions from '../actionTypes';
 //import { message } from 'antd/es/message';
 //import 'antd/es/message/style';
 import { message } from 'antd';
-export const loginIn = () => {
+import { resolve } from 'dns';
+import { reject } from 'q';
+export const loginIn = (callback) => {
     return dispatch => {
         setTimeout(() => {
             window.localStorage.setItem("login", true);
             dispatch({
                 type: actions.LOGIN_IN
             });
-            message.info('登录成功', 3);
+            message.info('登录成功', 2);
+            callback();
         }, 500)
     }
 }

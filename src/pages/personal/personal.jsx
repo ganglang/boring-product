@@ -26,7 +26,13 @@ class Personal extends Component {
         })
     }
 
+    goBack=()=>{
+        this.props.history.goBack();
+    }
+
     render() {
+        console.log("personal");
+        console.log(this.props);
         return ( 
             <div className="personal-page page">
                 <BackBar title="个人中心">
@@ -43,9 +49,10 @@ class Personal extends Component {
                 </Drawer> 
                 <NavBar/>
                 <MyButton touch={this.props.loginOut.bind(this)}>退出登录</MyButton>
+                <MyButton touch={this.goBack.bind(this)}>返回上一页</MyButton>
             </div>
         )
     }
 }
 
-export default connect(state=>state.login,{loginOut})(Personal);
+export default connect(state=>({Login:state.Login}),{loginOut})(Personal);

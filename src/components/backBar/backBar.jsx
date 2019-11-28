@@ -7,7 +7,7 @@ class BackBar extends Component{
     }
 
     back=()=>{
-        this.props.navigation.goBack();
+        this.props.history.goBack();
     }
 
     render(){

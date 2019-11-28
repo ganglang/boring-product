@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
 import './button.scss';
-class Button extends Component{
+class MyButton extends Component{
     constructor(props){
         super(props);
     }
@@ -16,4 +16,4 @@ class Button extends Component{
     }
 }
 
-export default Button;
+export default MyButton;
