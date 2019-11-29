@@ -189,3 +189,21 @@ codeChange(event){
     onChange={this.codeChange.bind(this)}
     ></textarea>
 ```
+
+### 知识点：封装用axios请求的get或post请求要返回用new Promise包裹的axios请求，然后调用这个封装方法才能用then来做后面的操作
+```
+export const get = (url, data) => {
+    let param = ``;
+    let newUrl = url;
+    for (let key in data) {
+        param += `${key}=${data[key]}&`
+    }
+    param += `key=${key}`;
+    newUrl = newUrl + `?` + param;
+    return new Promise((resolve, reject) => {
+        axios.get(newUrl).then(res => {
+            resolve(res);
+        })
+    })
+}
+```

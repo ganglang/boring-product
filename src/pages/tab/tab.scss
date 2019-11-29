@@ -3,14 +3,14 @@
     padding: px(10) px(16);
     .code-box {
         position: relative;
-        padding: px(6) px(0) px(6) px(30);
+        padding: px(8) px(4) px(8) px(30);
         background: #2d2d2d;
         .line-box {
             background: #2d2d2d;
             width: px(30);
             min-height: px(24);
             position: absolute;
-            top: px(6);
+            top: px(8);
             left: 0;
             .line {
                 display: block;
@@ -32,9 +32,6 @@
                 margin: 0;
                 padding: 0 px(6);
                 text-align: left;
-                position: absolute;
-                top: 0;
-                left: 0;
                 opacity: 0;
                 code {
                     display: block;
@@ -51,6 +48,9 @@
                 color: #ccc;
                 margin: 0;
                 padding: 0 px(6);
+                position: absolute;
+                top: 0;
+                left: 0;
             }
         }
     }

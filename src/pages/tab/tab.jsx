@@ -4,6 +4,7 @@ class Tab extends Component{
     constructor(props){
         super(props);
         this.state={
+            html:'',
             height:0,
             baseHeight:0,
             lineArray:["1"]
@@ -20,10 +21,12 @@ class Tab extends Component{
     
     enterCode=(event)=>{
         let pre=document.getElementById("pre");
-        pre.innerHTML=event.target.value;
+        //pre.innerHTML=event.target.value;
         this.setState({
+            html:event.target.value,
             height:pre.offsetHeight
         })
+        //console.log(pre.offsetHeight);
         let num=pre.offsetHeight/this.state.baseHeight;
         let arr=[];
         for(let i=1;i<=num;i++){
@@ -61,10 +64,10 @@ class Tab extends Component{
                         })}  
                     </div>
                     <div className="enter-box">
-                        <pre id="pre"></pre>
+                        <pre id="pre">{this.state.html}</pre>
                         <textarea style={{height:this.state.height+"px"}}
-                        onKeyUp={this.keyPress.bind(this)}
-                        onInput={this.enterCode.bind(this)}></textarea>
+                        /*onKeyUp={this.keyPress.bind(this)}*/
+                        onChange={this.enterCode.bind(this)}></textarea>
                     </div>
                     
                 </div>

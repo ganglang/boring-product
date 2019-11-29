@@ -1,0 +1,43 @@
+.new-box {
+    .new-item {
+        padding: px(14);
+        .new-link {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            .new-img {
+                width: px(160);
+                height: px(120);
+                background-repeat: no-repeat;
+                background-size: 100% auto;
+                background-position: center;
+            }
+            .new-info {
+                width: px(215);
+                padding-left: px(16);
+                .new-title {
+                    font-size: px(18);
+                    line-height: px(30);
+                    height: px(60);
+                    color: #666666;
+                    text-align: left;
+                }
+                .new-date-author {
+                    display: flex;
+                    justify-content: space-around;
+                    align-items: center;
+                    font-size: px(16);
+                    line-height: px(24);
+                    .new-author {
+                        color: aliceblue;
+                        text-align: right;
+                    }
+                    .new-date {
+                        color: #666666;
+                        text-align: left;
+                    }
+                }
+            }
+        }
+    }
+}
