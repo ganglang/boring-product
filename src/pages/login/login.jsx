@@ -15,8 +15,6 @@ class Login extends Component{
     }
 
     render(){
-        console.log("login");
-        console.log(this.props);
         return (
             <div className="login-page">
                 <div className="center">

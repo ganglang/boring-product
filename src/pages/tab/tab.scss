@@ -1,0 +1,57 @@
+@import '../../common.scss';
+.tab-page {
+    padding: px(10) px(16);
+    .code-box {
+        position: relative;
+        padding: px(6) px(0) px(6) px(30);
+        background: #2d2d2d;
+        .line-box {
+            background: #2d2d2d;
+            width: px(30);
+            min-height: px(24);
+            position: absolute;
+            top: px(6);
+            left: 0;
+            .line {
+                display: block;
+                padding: px(0) px(8);
+                font-size: px(16);
+                line-height: px(24);
+                color: #ccc;
+                border-right: px(1) solid #cccccc;
+            }
+        }
+        .enter-box {
+            position: relative;
+            pre {
+                min-height: px(24);
+                background: #2d2d2d;
+                font-size: px(16);
+                line-height: px(24);
+                color: #ccc;
+                margin: 0;
+                padding: 0 px(6);
+                text-align: left;
+                position: absolute;
+                top: 0;
+                left: 0;
+                opacity: 0;
+                code {
+                    display: block;
+                }
+            }
+            textarea {
+                background: #2d2d2d;
+                width: 100%;
+                min-height: px(24);
+                border: none;
+                outline: none;
+                font-size: px(16);
+                line-height: px(24);
+                color: #ccc;
+                margin: 0;
+                padding: 0 px(6);
+            }
+        }
+    }
+}

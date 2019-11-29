@@ -9,11 +9,7 @@ class AuthorizedRoute extends Component{
 
     render(){
         let Component=this.props.component; //可以拿到传过来要渲染的组件
-        //console.log("auth-login:"+this.props.login.login);
-        //console.log("auth-path0:"+this.props.path);
         let login=this.props.Login.login;
-        //console.log(this.props);
-        //console.log("auth-route"+JSON.stringify(this.props));
         return (
             //此种写法正确
             <Route render={ props=>{

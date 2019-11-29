@@ -103,6 +103,7 @@ alert(fn1());
 3.优化页面的scroll事件
 
 ### 知识点：路由拦截使用Route组件来写,详细见authorizedRoute.jsx文件
+参考链接：https://www.cnblogs.com/kdcg/p/9309600.html
 ```
 //此种写法正确
             <Route render={ props=>{
@@ -163,4 +164,28 @@ export const loginIn = (callback) => {
 #### 知识点：路由的跳转
 ```
 this.props.history.push(path);
+```
+
+#### 知识点：表单组件获取值
+```
+ enterCode=(event)=>{
+    var text=event.target.value;
+    console.log(text);
+}
+
+<textarea onInput={this.enterCode.bind(this)}>
+</textarea>
+
+```
+#### 知识点：表单组件的双向数据绑定要用到onChange
+```
+codeChange(event){
+        this.setState({
+            value:event.target.value
+        })
+    }
+<textarea 
+    value={this.state.value} 
+    onChange={this.codeChange.bind(this)}
+    ></textarea>
 ```
