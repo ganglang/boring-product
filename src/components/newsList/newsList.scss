@@ -1,35 +1,40 @@
+@import '../../common.scss';
 .new-box {
+    width: 100%;
     .new-item {
-        padding: px(14);
+        padding: px(10);
         .new-link {
             display: flex;
             justify-content: flex-start;
             align-items: center;
+            flex-wrap: wrap;
             .new-img {
-                width: px(160);
-                height: px(120);
+                width: px(120);
+                height: px(90);
                 background-repeat: no-repeat;
                 background-size: 100% auto;
                 background-position: center;
             }
             .new-info {
-                width: px(215);
-                padding-left: px(16);
+                width: px(235);
+                height: px(90);
+                padding-left: px(10);
                 .new-title {
-                    font-size: px(18);
-                    line-height: px(30);
+                    font-size: px(14);
+                    line-height: px(20);
                     height: px(60);
                     color: #666666;
                     text-align: left;
+                    overflow: hidden;
                 }
                 .new-date-author {
                     display: flex;
-                    justify-content: space-around;
+                    justify-content: space-between;
                     align-items: center;
-                    font-size: px(16);
-                    line-height: px(24);
+                    font-size: px(12);
+                    line-height: px(18);
                     .new-author {
-                        color: aliceblue;
+                        color: #666666;
                         text-align: right;
                     }
                     .new-date {

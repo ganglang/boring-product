@@ -3,28 +3,20 @@ import './newsList.scss';
 class NewsList extends Component{
     constructor(props){
         super(props);
+        this.state={
+            news:[]
+        }
     }
 
     render(){
         return (
-            <div className="new-box">
-                    {this.props.news.map(item =>{
-                        return (
-                            <div className="new-item">
-                                <a href={item.url} className="new-link">
-                                    <div className="new-img" style={{backgroundImage:url(item.thumbnail_pic_s)}}></div>
-                                    <div className="new-info">
-                                        <div className="new-title">{item.title}</div>
-                                        <div className="new-date-author">
-                                            <div className="new-date">{item.date}</div>
-                                            <div className="new-author">{item.author_name}</div>
-                                        </div>
-                                    </div>
-                                </ a>
-                            </div>
-                        )
-                    })} 
-                </div>
+            <div className="new-box">{
+                        this.props.news.map(item=>{
+                            return (
+                                <div className="new-item" key={item.uniquekey}><a href={item.url} className="new-link"><div className="new-img" style={{backgroundImage:`url(${item.thumbnail_pic_s})`}}></div><div className="new-info"><div className="new-title">{item.title}</div><div className="new-date-author"><div className="new-date">{item.date}</div><div className="new-author">{item.author_name}</div></div></div></a></div>
+                            )
+                        })
+            }</div>
         )
     }
 }

@@ -49,12 +49,15 @@ class AuthorizedRoute extends Component{
     }
 
     render(){
-        let Component=this.props.component;
-        console.log(this.props.login.login);
+        let Component=this.props.component; //可以拿到传过来要渲染的组件
+        let login=this.props.Login.login;
         return (
-            <div>
-                {this.props.login.login?<Component />:<Redirect to="/login"/>}    
-            </div>
+            <Route render={ props=>{
+               return login?
+               <Component {...props}/>:
+               <Redirect to={{"pathname":"/login",state:{from:props.location}}}/>
+            }}>          
+            </Route>
         )
     }
 }
@@ -206,4 +209,16 @@ export const get = (url, data) => {
         })
     })
 }
+```
+
+### 知识点:给组件设置背景图,与vue项目不同
+正确的写法--用``+${}
+```
+<div className="new-img" style={{backgroundImage:`url(${item.thumbnail_pic_s})`}}>
+</div>
+
+```
+错误的写法
+```
+<div className="new-img" style={{backgroundImage:url(item.thumbnail_pic_s)}}></div>
 ```
